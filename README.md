@@ -15,9 +15,13 @@
 ## Descripción del Proyecto
 
 <p align="justify">
- Proyecto realizado ante el desafió propuesto en el curso de Alura en el programa de ONE Oracle Next Education en la especialización Backend.
+ Proyecto realizado ante él desafió propuesto en el curso de Alura en el programa de ONE Oracle Next Education en la especialización Backend.
 
 El proyecto consiste en la conversión de monedas con la interacción del usuario mediante la consola, ya que es una aplicación de consola.
+
+Consiste en el consumo de una API, donde recibe el código del pais como base de la cual que queremos, y luego se ingresa el código del pais de la moneda que queremos, esto lo filtra y te devuelve el valor de dicha moneda.
+
+Por ejemplo, si queremos saber cuanto cuesta un dólar en peso uruguayo, se debe ingresar como moneda base USD, y luego ingresar UYU, y esto te devuelve cuanto equivale un dólar a un peso uruguayo.
 
 ![Descripcion del proyecto](https://media.istockphoto.com/id/483658563/es/foto/mundo-de-las-monedas.jpg?s=1024x1024&w=is&k=20&c=eKS9IQ3JPGcX6EBrq-zZv4THhGalJ0HFdzs_pefxZCc=)
 </p>
