@@ -19,9 +19,9 @@
 
 El proyecto consiste en la conversión de monedas con la interacción del usuario mediante la consola, ya que es una aplicación de consola.
 
-Consiste en el consumo de una API, donde recibe el código del pais como base de la cual que queremos, y luego se ingresa el código del pais de la moneda que queremos, esto lo filtra y te devuelve el valor de dicha moneda.
+Consiste en el consumo de una API, donde recibe el código del pais como base, con este input realizamos una petición a la API para obtener los valores equivalentes a las diferentes monedas a la moneda base ingresada, se guarda dicha respuesta en la clase Moneda.
+Luego, se ingresa el código de pais de la moneda a la cual queremos convertir y el importe a convertir, con estos inputs se realiza la conversión, dando por consola la respuesta de cuanto vale el importe ingresado en la moneda la cual se busca, que fue ingresada anteriormente.
 
-Por ejemplo, si queremos saber cuanto cuesta un dólar en peso uruguayo, se debe ingresar como moneda base USD, y luego ingresar UYU, y esto te devuelve cuanto equivale un dólar a un peso uruguayo.
 
 ![Descripcion del proyecto](https://media.istockphoto.com/id/483658563/es/foto/mundo-de-las-monedas.jpg?s=1024x1024&w=is&k=20&c=eKS9IQ3JPGcX6EBrq-zZv4THhGalJ0HFdzs_pefxZCc=)
 </p>
