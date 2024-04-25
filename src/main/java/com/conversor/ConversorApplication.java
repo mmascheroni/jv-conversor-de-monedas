@@ -21,7 +21,7 @@ public class ConversorApplication {
 
 		try {
 			Scanner lectura = new Scanner(System.in);
-			System.out.println("Ingrese la moneda base: ");
+			System.out.println("Ingrese el código de pais de la moneda base: ");
 			String busqueda = lectura.nextLine();
 
 			String url = "https://v6.exchangerate-api.com/v6/d65727d9adf1de01c9b6a10e/latest/" + busqueda;
@@ -35,26 +35,31 @@ public class ConversorApplication {
 			String json = response.body();
 
 			if (response.statusCode() != 200) {
-				throw new ErrorMonedaBaseNoExiste("El codigo de pais de Moneda Base ingresado no existe");
+				throw new ErrorMonedaBaseNoExiste("El código de pais de la moneda base no existe!");
 			} else {
 				Gson gson = new Gson();
 
 				Moneda moneda = gson.fromJson(json, Moneda.class);
 
-				System.out.println("Ingrese la moneda buscada: ");
+				System.out.println("Ingrese el código de pais de la moneda a cual se quiere convertir: ");
 				String busquedaMoneda = lectura.nextLine();
 
 				moneda.setConversionMonedaBuscada(busquedaMoneda);
 
 				if ( moneda.obtenerConversion(busquedaMoneda) == null ) {
-					throw new ErrorMonedaBuscadaNoExiste("El codigo de pais de Moneda buscada para conversion no existe");
+					throw new ErrorMonedaBuscadaNoExiste("El código de pais de moneda a cual se quiere convertir no existe");
 				} else {
 					moneda.setConversion(moneda.obtenerConversion(busquedaMoneda));
 
 					System.out.println(moneda);
-					System.out.println("Moneda Base con el código de moneda del pais: " + moneda.getMonedaBase());
-					System.out.println("Moneda Buscada con el código de moneda del pais: " + moneda.getConversionMonedaBuscada());
-					System.out.println("Moneda Buscada Conversion: $" + moneda.getConversion());
+					System.out.println("Código de Pais de la Moneda base: " + moneda.getMonedaBase());
+					System.out.println("Código de Pais de la Moneda a cual se quiere convertir: " + moneda.getConversionMonedaBuscada());
+					System.out.println("Conversion: $" + moneda.getConversion());
+
+					System.out.println("Ingrese el importe que desea convertir");
+					Float importeAConversion = lectura.nextFloat();
+
+					System.out.println("La conversión de $" + importeAConversion + " " + moneda.getMonedaBase() + " es igual a $" + importeAConversion * moneda.getConversion() + " " + moneda.getConversionMonedaBuscada());
 				}
 			}
 
